@@ -11,14 +11,14 @@ export class InputField extends React.Component{
       inputValue: ""
     }
     this.changeHandler = this.changeHandler.bind(this)
-    this.submitInput = this.submitInput.bind(this)
+    this.onClick = this.onClick.bind(this)
   }
   render() {
 
     return (
       <div>
         <input ref="input" type="text" onChange={this.changeHandler}/>
-        <button onClick={this.submitInput}>Submit</button>
+        <button onClick={this.onClick}>Submit</button>
       </div>
     )
   }
@@ -26,8 +26,7 @@ export class InputField extends React.Component{
     this.setState({inputValue: event.target.value});
   }
 
-  submitInput(){
-    this.props.store.dispatch(addComment(10, this.state.inputValue, 5));
-    console.log("submitInput", this.state.inputValue);
+  onClick(){
+    this.props.onSubmit(this.state.inputValue);
   }
 }

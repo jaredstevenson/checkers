@@ -11,7 +11,7 @@ export class MessageBoard extends React.Component {
     const posts = this.props.posts;
     return (
       <div className="MessageBoard">
-        <InputField store={this.props.store}/>
+        <InputField onSubmit={this.props.submitPost}/>
         {posts.map(function (post){
       ////I was working on making this work and fit in with everything else
       //I don't have the react part working yet, I am just filling it out without testing it.
