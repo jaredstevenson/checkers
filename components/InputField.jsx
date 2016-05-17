@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {addComment} from '../actions.js';
+//simport {addComment} from '../actions.js';
 
 
 

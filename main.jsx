@@ -9,7 +9,7 @@ import { Display } from './components/App.jsx';
 
 const store = createStore(reducer);
 store.subscribe(()=> {
-  console.log("store", store.getState());
+  //console.log("store", store.getState());
   renderBoard(store.getState());
 })
 
@@ -54,12 +54,12 @@ store.dispatch(
 
 
 function renderBoard(state){
-console.log("render", state);
+//console.log("render", state);
 // render(
 //   <div>helloworld!</div>,
 //   document.getElementById('messages')
 // )
-console.log("users main", state.users);
+//console.log("users main", state.users);
   render(
 
     <div><Display posts={state.posts} users={state.users} store={store}/></div>,
