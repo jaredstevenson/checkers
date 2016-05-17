@@ -5,6 +5,7 @@ import * as ReactDOM from 'react-dom';
 
 export class Post extends React.Component {
   render() {
-    return <div ></div>
+    const text = this.props.text;
+    return <div className="post">{text} {this.props.userId}</div>
   }
 }

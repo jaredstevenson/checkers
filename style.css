@@ -1,8 +1,10 @@
 .messageBoard {
-  background-color: blue;
+  background-color: grey;
   width: 300px;
   height: 600px;
-  background-size: 300px 600px;
+  
+  display: inline-block;
+
 
 }
 
@@ -10,4 +12,11 @@
   font-size: 2em;
   text-decoration-color: red;
 
+}
+
+.usersTable {
+  background-color: green;
+  width: 200px;
+  height: 600px;
+  display: inline-block;
 }
