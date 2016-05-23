@@ -1,22 +1,55 @@
-.messageBoard {
-  background-color: grey;
-  width: 300px;
-  height: 600px;
-  
-  display: inline-block;
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+.board {
+    width: 720px;
+    height: 720px;
+    background-image: url("http://i1.wp.com/www.graphictunnel.com/wp-content/uploads/2015/02/Checkerboard-fancy-blueyellow1.jpg?resize=400%2C400");
+    background-size: 720px 720px;
+
 
 
 }
 
-.post {
-  font-size: 2em;
-  text-decoration-color: red;
+.piece {
+  position: absolute;
+  background-size: 80px;
+  border: 0px solid black;
+  border-radius: 40px;
+  width: 80px;
+  height: 80px;
+  font-size: 4em;
+  text-align: center;
+  transition: top 1s, left 1s;
 
 }
+.piece-red {
+  color: black;
+  background-color: red;
+
+}
+
+.piece-black {
+  background-color: black;
+  color: white;
+}
+
+
 
 .usersTable {
   background-color: green;
   width: 200px;
   height: 600px;
   display: inline-block;
+  border-style: inset;
+  border-width: 7px;
+  border-spacing: 15px;
+  padding: 25px;
+
+  left: 450px;
+
 }

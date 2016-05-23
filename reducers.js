@@ -3,13 +3,13 @@ import { ADD_USER, CHANGE_USER_NAME, ADD_POST, DELETE_USER, DELETE_POST} from '.
 
 
 const initialState = {
-  users: [],
-  posts: []
+  pieces: []
 }
+
 export function reducer(state = initialState, action){
       switch(action.type) {
-        case ADD_USER:
-          return addUser(state, action);
+        case "MOVE_PIECE":
+          return movePiece(state, action);
 
         case CHANGE_USER_NAME:
           return changeUserName (state, action);
@@ -23,26 +23,28 @@ export function reducer(state = initialState, action){
           //delete user
         case DELETE_POST:
           return deletePost (state, action);
+        default:
+          return state;
 
 
     }
 }
 
-function addUser (state, action) {
-  return Object.assign({}, state, {
-    users: [...state.users, action.payload]
-  })
-}
 
-function changeUserName (state, action) {
+
+function movePiece (state, action) {
   return Object.assign({}, state, {
-    users: state.users.map((user) => {
-      if (user.id === action.payload.id) {
-        return Object.assign({}, user, {
-          name: action.payload.name
+    pieces: state.pieces.map((piece) => {
+      //    console.log("state piece", piece);
+      if (piece.id === action.payload.id) {
+        return Object.assign({}, piece, {
+
+          row: action.payload.row,
+          column: action.payload.column
         })
+
       }
-      return user;
+      return piece;
     })
   })
 }
