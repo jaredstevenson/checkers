@@ -4,7 +4,7 @@ import {movePiece} from './lib/model.js';
 
 const initialState = {
   pieces: [],
-  selecetedPieceId: null
+  selectedPieceId: null
 }
 
 export function reducer(state = initialState, action){
@@ -16,14 +16,14 @@ export function reducer(state = initialState, action){
           return movePieceIfLegal (state, action);
 
 
-        case ADD_POST:
-          return addComment (state, action);
+        case "SELECT_PIECE":
+          return selectPiece (state, action);
 
-        case DELETE_USER:
-          return deleteUser (state, action);
-          //delete user
-        case DELETE_POST:
-          return deletePost (state, action);
+        // case DELETE_USER:
+        //   return deleteUser (state, action);
+        //   //delete user
+        // case DELETE_POST:
+        //   return deletePost (state, action);
         default:
           return state;
 
@@ -52,7 +52,7 @@ export function reducer(state = initialState, action){
 // }
 
 function movePieceIfLegal (state, action) {
-  const newPieces = movePiece(action.payload.pieces, action.payload.piece, action.payload.row, action.payload.column)
+  const newPieces = movePiece(action.payload.pieces, action.payload.id, action.payload.row, action.payload.column)
   return Object.assign({}, state, {
     pieces: newPieces
 
@@ -60,12 +60,13 @@ function movePieceIfLegal (state, action) {
 
 }
 
-// function addComment (state, action) {
-//   return Object.assign({}, state, {
-//     posts: [...state.posts, action.payload]
-//   })
-// }
-//
+function selectPiece (state, action) {
+  console.log("pieceid", action.payload.id);
+  return Object.assign({}, state, {
+    selectedPieceId: action.payload.id
+  })
+}
+
 // function deleteUser (state, action) {
 //   return Object.assign({}, state, {
 //     users: filter(state.users, (user)=>{

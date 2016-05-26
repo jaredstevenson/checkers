@@ -8,12 +8,21 @@ body {
 .board {
     width: 720px;
     height: 720px;
-    background-image: url("http://i1.wp.com/www.graphictunnel.com/wp-content/uploads/2015/02/Checkerboard-fancy-blueyellow1.jpg?resize=400%2C400");
+    background-color: yellow;
     background-size: 720px 720px;
 
 
 
 }
+
+.board-squares {
+  width: 90;
+  height: 90;
+  background-color: blue;
+  position: absolute;
+}
+
+
 
 .piece {
   position: absolute;

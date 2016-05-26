@@ -14,28 +14,27 @@
 //   }
 // }
 
-export function movePieceIfLegal (pieces, piece, row, column) {
+export function movePieceIfLegal (pieces, id, row, column) {
 
   return {
     type: "MOVE_PIECE_IF_LEGAL",
     payload: {
       pieces: pieces,
-      piece: piece,
+      id: id,
       row: row,
       column: column
     }
   }
 }
 
-// export function changeUserName (userId, newName) {
-//   return {
-//     type: CHANGE_USER_NAME,
-//     payload: {
-//       id: userId,
-//       name: newName
-//     }
-//   }
-// }
+export function selectPiece (id) {
+  return {
+    type: "SELECT_PIECE",
+    payload: {
+      id: id
+    }
+  }
+}
 //
 // export function addComment (userId, comment, postId) {
 //   return {

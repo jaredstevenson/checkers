@@ -2,6 +2,8 @@ import {isEven, isPieceThere, isNextDiagnol, isTwoDiagnol, isPieceInBetween, isL
 import {expect} from 'chai';
 // import { pieces} from '../pieces.js';
 
+
+
 var pieces = [{
   id: 1,
   row: 1,

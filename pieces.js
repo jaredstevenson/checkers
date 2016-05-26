@@ -1,5 +1,4 @@
 
-
 export var pieces = [{
   id: 1,
   row: 1,
@@ -54,7 +53,7 @@ export var pieces = [{
   row: 2,
   column: 8,
   type: "red",
-  king: true
+  king: false
 },
 {
   id: 9,
@@ -166,5 +165,5 @@ export var pieces = [{
   row: 6,
   column: 8 ,
   type: "black",
-  king: true
+  king: false
 }]
