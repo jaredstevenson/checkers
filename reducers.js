@@ -1,13 +1,14 @@
-import {filter} from 'lodash';
+import {filter, cloneDeep} from 'lodash';
 import { ADD_USER, CHANGE_USER_NAME, ADD_POST, DELETE_USER, DELETE_POST} from './constants.js';
 import {movePiece} from './lib/model.js';
 
-const initialState = {
+export const initialState = {
   pieces: [],
-  selectedPieceId: null
+  selectedPieceId: null,
+  turn: "red"
 }
 
-export function reducer(state = initialState, action){
+export function oldReducer(state = initialState, action){
       switch(action.type) {
         // case "MOVE_PIECE":
         //   return movePiece(state, action);
@@ -31,6 +32,13 @@ export function reducer(state = initialState, action){
     }
 }
 
+export function reducer (state, action) {
+  const oldState = cloneDeep(state);
+  const newState = oldReducer(state, action);
+  console.log(action.type, oldState, newState);
+  return newState
+}
+
 
 //moves piece to new given column and row
 
@@ -52,11 +60,8 @@ export function reducer(state = initialState, action){
 // }
 
 function movePieceIfLegal (state, action) {
-  const newPieces = movePiece(action.payload.pieces, action.payload.id, action.payload.row, action.payload.column)
-  return Object.assign({}, state, {
-    pieces: newPieces
-
-  })
+  const newState = movePiece(state, action.payload.row, action.payload.column)
+  return newState;
 
 }
 

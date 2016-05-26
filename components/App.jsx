@@ -24,19 +24,17 @@ export class Display extends React.Component{
           pieceClickHandler = {this.pieceClickHandler}
           boardSquareClickHandler = {this.boardSquareClickHandler}
         />
-        <div>{this.props.state.selectedPieceId}</div>
+      <div>It's {this.props.state.turn}s turn!</div>
 
       </div>
     )
   }
 
   pieceClickHandler(id){
-    console.log("pieceClickHandler id", id);
     this.props.dispatch(selectPiece(id));
   }
 
   boardSquareClickHandler(row, column){
-    console.log("boardSquareClickHandler", row, column);
     this.props.dispatch(movePieceIfLegal(this.props.state.pieces, this.props.state.selectedPieceId ,row, column))
   }
 

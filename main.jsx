@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import { reducer } from './reducers.js';
+import { reducer} from './reducers.js';
 import { movePieceIfLegal } from './actions.js';
 import * as React from 'react';
 import { render } from 'react-dom';
@@ -12,10 +12,14 @@ import { findIndex} from 'lodash';
 //get the rules of the game working
 //
 
+const initialState = {
+  pieces: pieces,
+  selectedPieceId: null,
+  turn: "red"
+}
 
 
-
-const store = createStore(reducer, {pieces: pieces});
+const store = createStore(reducer, initialState);
 console.log("store.getState", store.getState());
 store.subscribe(()=> {
   renderBoard(store.getState());
