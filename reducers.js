@@ -5,13 +5,15 @@ import {movePiece} from './lib/model.js';
 export const initialState = {
   pieces: [],
   selectedPieceId: null,
-  turn: "red"
+  turn: "red",
+  isWon: false,
+  lastPieceId: null,
+  lastMoveWasJump: false
 }
 
 export function oldReducer(state = initialState, action){
       switch(action.type) {
-        // case "MOVE_PIECE":
-        //   return movePiece(state, action);
+
 
         case "MOVE_PIECE_IF_LEGAL":
           return movePieceIfLegal (state, action);
@@ -20,11 +22,7 @@ export function oldReducer(state = initialState, action){
         case "SELECT_PIECE":
           return selectPiece (state, action);
 
-        // case DELETE_USER:
-        //   return deleteUser (state, action);
-        //   //delete user
-        // case DELETE_POST:
-        //   return deletePost (state, action);
+
         default:
           return state;
 

@@ -17,6 +17,7 @@ export class Display extends React.Component{
   }
 
   render() {
+    const victoryClass = (this.props.state.isWon) ? "victory" : "none"
     return (
       <div>
         <Board
@@ -25,6 +26,7 @@ export class Display extends React.Component{
           boardSquareClickHandler = {this.boardSquareClickHandler}
         />
       <div>It's {this.props.state.turn}s turn!</div>
+      <div className={victoryClass}>{this.props.state.pieces[0].type} won!</div>
 
       </div>
     )

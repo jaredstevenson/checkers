@@ -15,6 +15,10 @@ body {
 
 }
 
+.none {
+  display: none;
+}
+
 .board-squares {
   width: 90;
   height: 90;
@@ -22,6 +26,23 @@ body {
   position: absolute;
 }
 
+.victory {
+  position: fixed;
+  left:0px;
+  top:0px;
+  animation: victory-animation 5s linear 1s 10 alternate;
+  font-size: 10em;
+  display: inline;
+
+}
+
+@-webkit-keyframes victory-animation {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:400px;}
+    75%  {background-color:green; left:0px; top:400px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
 
 
 .piece {
