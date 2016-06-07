@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Board } from './Board.jsx';
-import { Users } from './Users.jsx';
+
 import {selectPiece, movePieceIfLegal} from '../actions.js';
 
 

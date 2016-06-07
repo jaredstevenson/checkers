@@ -67,19 +67,3 @@ body {
   background-color: black;
   color: white;
 }
-
-
-
-.usersTable {
-  background-color: green;
-  width: 200px;
-  height: 600px;
-  display: inline-block;
-  border-style: inset;
-  border-width: 7px;
-  border-spacing: 15px;
-  padding: 25px;
-
-  left: 450px;
-
-}
