@@ -1,4 +1,12 @@
-# Play checkers like normal checker games
+# Play checkers like normal
+## Install
 
-webpack-dev-server --port 3000  - starts my server
-npm test -runs karma on my test suite.
+  npm install
+
+## Develop
+
+  npm start
+
+## Build
+
+  npm run build
