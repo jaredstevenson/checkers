@@ -20,7 +20,6 @@ const initialState = {
 
 
 const store = createStore(reducer, initialState);
-console.log("store.getState", store.getState());
 store.subscribe(()=> {
   renderBoard(store.getState());
 })
@@ -47,7 +46,6 @@ store.subscribe(()=> {
 // },3000);
 
 function renderBoard(state){
-  console.log("state", state);
   render(
 
     <div><Display state={state} dispatch={store.dispatch}/></div>,

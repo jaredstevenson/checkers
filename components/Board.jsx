@@ -17,7 +17,6 @@ function createBoardSquares() {
       }
     }
   }
-  console.log("boardSquares", boardSquares);
 }
 
 createBoardSquares();

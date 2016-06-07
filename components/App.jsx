@@ -12,7 +12,7 @@ export class Display extends React.Component{
     super(props)
     this.pieceClickHandler = this.pieceClickHandler.bind(this);
     this.boardSquareClickHandler = this.boardSquareClickHandler.bind(this);
-
+    this.pass = this.pass.bind(this);
 
   }
 
@@ -26,12 +26,20 @@ export class Display extends React.Component{
           boardSquareClickHandler = {this.boardSquareClickHandler}
         />
       <div>It's {this.props.state.turn}s turn!</div>
+      <button onClick={this.pass}>Pass</button>
       <div className={victoryClass}>{this.props.state.pieces[0].type} won!</div>
 
       </div>
     )
   }
 
+  pass(){
+    if (this.props.state.turn === 'red') {
+      this.props.state.turn = 'black';
+    }else {
+      this.props.state.turn = 'red';
+    }
+  }
   pieceClickHandler(id){
     this.props.dispatch(selectPiece(id));
   }

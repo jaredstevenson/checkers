@@ -1,7 +1,6 @@
 // import { ADD_USER, CHANGE_USER_NAME, ADD_POST, DELETE_USER, DELETE_POST} from './constants.js';
 
 // export function movePiece (pieces, id, row, column) {
-//   console.log("movePiece");
 //
 //   return {
 //     type: "MOVE_PIECE",

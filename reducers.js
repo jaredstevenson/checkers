@@ -33,7 +33,6 @@ export function oldReducer(state = initialState, action){
 export function reducer (state, action) {
   const oldState = cloneDeep(state);
   const newState = oldReducer(state, action);
-  console.log(action.type, oldState, newState);
   return newState
 }
 
@@ -64,7 +63,6 @@ function movePieceIfLegal (state, action) {
 }
 
 function selectPiece (state, action) {
-  console.log("pieceid", action.payload.id);
   return Object.assign({}, state, {
     selectedPieceId: action.payload.id
   })
