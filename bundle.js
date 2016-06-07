@@ -84,7 +84,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n}\n* {\n  box-sizing: border-box;\n}\n\n.board {\n    width: 720px;\n    height: 720px;\n    background-color: yellow;\n    background-size: 720px 720px;\n\n\n\n}\n\n.none {\n  display: none;\n}\n\n.board-squares {\n  width: 90;\n  height: 90;\n  background-color: blue;\n  position: absolute;\n}\n\n.victory {\n  position: fixed;\n  left:0px;\n  top:0px;\n  animation: victory-animation 5s linear 1s 10 alternate;\n  font-size: 10em;\n  display: inline;\n\n}\n\n@-webkit-keyframes victory-animation {\n    0%   {background-color:red; left:0px; top:0px;}\n    25%  {background-color:yellow; left:200px; top:0px;}\n    50%  {background-color:blue; left:200px; top:400px;}\n    75%  {background-color:green; left:0px; top:400px;}\n    100% {background-color:red; left:0px; top:0px;}\n}\n\n\n.piece {\n  position: absolute;\n  background-size: 80px;\n  border: 0px solid black;\n  border-radius: 40px;\n  width: 80px;\n  height: 80px;\n  font-size: 4em;\n  text-align: center;\n  transition: top 1s, left 1s;\n\n}\n.piece-red {\n  color: black;\n  background-color: red;\n\n}\n\n.piece-black {\n  background-color: black;\n  color: white;\n}\n\n\n\n.usersTable {\n  background-color: green;\n  width: 200px;\n  height: 600px;\n  display: inline-block;\n  border-style: inset;\n  border-width: 7px;\n  border-spacing: 15px;\n  padding: 25px;\n\n  left: 450px;\n\n}\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n}\n* {\n  box-sizing: border-box;\n}\n\n.board {\n    width: 720px;\n    height: 720px;\n    background-color: yellow;\n    background-size: 720px 720px;\n\n\n\n}\n\n.none {\n  display: none;\n}\n\n.board-squares {\n  width: 90;\n  height: 90;\n  background-color: blue;\n  position: absolute;\n}\n\n.victory {\n  position: fixed;\n  left:0px;\n  top:0px;\n  animation: victory-animation 5s linear 1s 10 alternate;\n  font-size: 10em;\n  display: inline;\n\n}\n\n@-webkit-keyframes victory-animation {\n    0%   {background-color:red; left:0px; top:0px;}\n    25%  {background-color:yellow; left:200px; top:0px;}\n    50%  {background-color:blue; left:200px; top:400px;}\n    75%  {background-color:green; left:0px; top:400px;}\n    100% {background-color:red; left:0px; top:0px;}\n}\n\n\n.piece {\n  position: absolute;\n  background-size: 80px;\n  border: 0px solid black;\n  border-radius: 40px;\n  width: 80px;\n  height: 80px;\n  font-size: 4em;\n  text-align: center;\n  transition: top 1s, left 1s;\n\n}\n.piece-red {\n  color: black;\n  background-color: red;\n\n}\n\n.piece-black {\n  background-color: black;\n  color: white;\n}\n", ""]);
 
 	// exports
 
@@ -417,7 +417,7 @@
 
 	var _App = __webpack_require__(192);
 
-	var _pieces = __webpack_require__(197);
+	var _pieces = __webpack_require__(196);
 
 	var _model = __webpack_require__(24);
 
@@ -1465,25 +1465,6 @@
 	  return newState;
 	}
 
-	//moves piece to new given column and row
-
-	// function movePiece (state, action) {
-	//   return Object.assign({}, state, {
-	//     pieces: state.pieces.map((piece) => {
-	//       //    console.log("state piece", piece);
-	//       if (piece.id === action.payload.id) {
-	//         return Object.assign({}, piece, {
-	//
-	//           row: action.payload.row,
-	//           column: action.payload.column
-	//         })
-	//
-	//       }
-	//       return piece;
-	//     })
-	//   })
-	// }
-
 	function movePieceIfLegal(state, action) {
 	  var newState = (0, _model.movePiece)(state, action.payload.row, action.payload.column);
 	  return newState;
@@ -1494,23 +1475,6 @@
 	    selectedPieceId: action.payload.id
 	  });
 	}
-
-	// function deleteUser (state, action) {
-	//   return Object.assign({}, state, {
-	//     users: filter(state.users, (user)=>{
-	//       return (action.payload !== user.id)
-	//     })
-	//   })
-	// }
-	//
-	// function deletePost (state, action) {
-	//   console.log("delete post", state, action);
-	//   return Object.assign({}, state, {
-	//     posts: filter(state.posts, (post)=>{
-	//       return (action.payload != post.postId)
-	//     })
-	//   })
-	// }
 
 /***/ },
 /* 21 */
@@ -38057,8 +38021,6 @@
 
 	var _Board = __webpack_require__(193);
 
-	var _Users = __webpack_require__(196);
-
 	var _actions = __webpack_require__(25);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
@@ -38371,22 +38333,6 @@
 
 /***/ },
 /* 196 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _react = __webpack_require__(26);
-
-	var React = _interopRequireWildcard(_react);
-
-	var _reactDom = __webpack_require__(57);
-
-	var ReactDOM = _interopRequireWildcard(_reactDom);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-/***/ },
-/* 197 */
 /***/ function(module, exports) {
 
 	"use strict";
